@@ -1,66 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>housie</title>
     <link rel="icon" type="image/x-icon" href="./media/SK logo.png">
     <style>
-        *{
-            margin:0;
+        * {
+            margin: 0;
             padding: 0;
         }
-        header{
+
+        body {
+            background-color: orange;
+        }
+
+        header {
             background-color: orange;
             height: 10vh;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+            /* text-align: center; */
         }
-        section{
+
+        section {
             height: 80vh;
             background-color: bisque;
         }
-        footer{
-            background-color:orange;
-            height: 10vh;
+
+        footer {
+            background-color: orange;
+            /* height: 10vh; */
             display: flex;
             justify-content: center;
+            flex-direction: column;
             align-items: center;
         }
-        button{
+
+        button {
             background-color: blue;
             color: white;
             border: none;
             border-radius: 10px;
-            cursor:pointer;
+            cursor: pointer;
             padding: 8px 20px;
         }
-        button:hover{
+
+        button:active {
             background-color: rgb(67, 137, 157);
             color: black;
         }
-        .div_section{
+
+        .div_section {
             display: flex;
             justify-content: space-around;
             align-items: center;
             height: 100%;
-            width: 100%;        
+            width: 100%;
         }
-        .sheet_coin{
+
+        .sheet_coin {
             background-color: gray;
-            color:gray;
+            color: gray;
             width: 9%;
             height: 9%;
-            display:flex;
+            display: flex;
             margin: 2px;
             align-items: center;
             justify-content: center;
             border-radius: 10px;
         }
-        .T_sheet_coin{
-            background-color: gray;
 
+        .T_sheet_coin {
+            background-color: gray;
             width: 30%;
             height: 9%;
             margin: 2px;
@@ -68,9 +82,10 @@
             justify-content: center;
             align-items: center;
             border-radius: 10px;
-            
+
         }
-        .game_sheet{
+
+        .game_sheet {
             height: 90%;
             width: 90%;
             border: 1px solid red;
@@ -82,15 +97,17 @@
             overflow: scroll;
             scrollbar-width: none;
         }
-        .btn_div{
+
+        .btn_div {
             display: flex;
             align-items: center;
             justify-content: space-around;
             width: 100%;
             margin: 5px;
-                        
+
         }
-        .team_ticket{
+
+        .team_ticket {
             background-color: rgb(198, 191, 191);
             width: 80%;
             height: 80%;
@@ -98,27 +115,31 @@
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            overflow:scroll;
+            overflow: scroll;
             scrollbar-width: none;
         }
-        .team_score{
+
+        .team_score {
             margin: 5px;
             padding: 10px 20px;
             background-color: rgb(198, 191, 191);
         }
-        .left_div, .right_div{
+
+        .left_div,
+        .right_div {
             background-color: gray;
             height: 90%;
             max-width: 500px;
             max-height: 500px;
             width: 15%;
             display: flex;
-            flex-direction:column;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             border: 1px solid red;
         }
-        .middle_div{
+
+        .middle_div {
             background-color: rgb(209, 209, 215);
             height: 90%;
             max-width: 500px;
@@ -129,10 +150,20 @@
             flex-direction: column;
             justify-content: center;
         }
-        #refresh, #pac ,#auto{
+
+        #autobtn {
+            width: 100px;
+            margin: 2px;
+            text-align: center;
+        }
+
+        #refresh,
+        #autobtn,
+        #pac {
             display: none;
         }
-        #bet_amount{
+
+        #bet_amount {
             height: 30px;
             background-color: gray;
             width: 60px;
@@ -141,46 +172,56 @@
             justify-content: center;
             align-items: center;
         }
-        #heading{
+
+        #heading {
             color: rgb(255, 255, 255);
             font-size: 3rem;
         }
-        #footer{
+
+        #footer {
             font-size: 1.0rem;
-            color:black
+            color: black;
         }
+
         @media (max-width:450px) {
-            .div_section{
+            .div_section {
                 display: flex;
                 flex-direction: column;
-                
+
             }
-            #heading{
+
+            #heading {
                 font-size: 2.5rem;
             }
-            .left_div, .right_div{
+
+            .left_div,
+            .right_div {
                 width: 90%;
                 height: 15%;
                 display: flex;
                 flex-direction: row;
                 margin: 0;
-                
+
             }
-            .middle_div{
+
+            .middle_div {
                 height: 50%;
                 width: 90%;
             }
-            .team_ticket{
+
+            .team_ticket {
                 display: flex;
                 flex-direction: column;
                 width: 90%;
             }
-            .btn_div{
+
+            .btn_div {
                 display: flex;
                 flex-wrap: wrap;
 
             }
-            .team_score{
+
+            .team_score {
                 padding: 0;
                 height: 90%;
                 display: flex;
@@ -193,293 +234,331 @@
                 /* display: flex; */
 
             }
-            .game_sheet{
+
+            .game_sheet {
                 width: 90%;
                 height: 80%;
             }
-            .sheet_coin{
+
+            .sheet_coin {
                 height: 8%;
                 margin: 0.05rem;
                 width: 9%;
             }
-            .T_sheet_coin{
+
+            .T_sheet_coin {
                 height: 25%;
                 width: 9%;
-                margin:0.1vh;
+                margin: 0.1vh;
             }
 
         }
+        #imagelogo{
+            height: 50px;
+            margin: 5px;
+        }
     </style>
 </head>
+
 <body>
     <header>
+        <p ><a href="https://my-portfolio-v0ez.onrender.com/" alt="portfolioimg"><img src="../media/SK logo.png" alt="portfolioimg" id="imagelogo" ></a></p>
         <p id="heading">welcome to housie</p>
+        <p> <button onclick="auto()" id="autobtn">Auto</button></p>
     </header>
     <section>
         <div class="div_section">
             <audio src="./media/tic.wav" id="tic"></audio>
             <audio src="./media/game_completed.wav" id="gc"></audio>
+            <audio src="./media/coins.wav" id="cns"></audio>
             <div class="left_div" id="left_div">
-                <div class="team_ticket tat" id="team_a_ticket">    </div>
-                <div class="team_score tas" id="teamA">     </div> 
+                <div class="team_ticket tat" id="team_a_ticket"> </div>
+                <div class="team_score tas" id="teamA"> </div>
             </div>
 
             <div class="middle_div">
-                <div class="game_sheet" id="game_sheet">    </div>
+                <div class="game_sheet" id="game_sheet"> </div>
                 <div class="btn_div">
                     <button id="refresh" onclick="refresh()">refresh</button>
                     <p id="bet_amount">p</p>
-                    <button id="pac" onclick="pick_a_coin()" >pick a coin</button>
-                    <button id="auto" onmouseover="auto()" onmouseout="stop()">automatic</button>
-                    <button id="five" onclick="bet(5)" >5</button>
-                    <button id="ten" onclick="bet(10)" >10</button>
-                    <button id="fifty" onclick="bet(50)" >50</button>
-                    <button id="hundred" onclick="bet(100)" >100</button>
+                    <button id="pac" onclick="pick_a_coin()">pick a coin</button>
+                    <!-- <button id="auto" onmouseover="auto()" onmouseout="stop()">automatic</button> -->
+                    <button id="five" onclick="bet(5)">5</button>
+                    <button id="ten" onclick="bet(10)">10</button>
+                    <button id="fifty" onclick="bet(50)">50</button>
+                    <button id="hundred" onclick="bet(100)">100</button>
                 </div>
             </div>
 
             <div class="right_div" id="right_div">
-                <div class="team_ticket tat" id="team_b_ticket">    </div>
-                <div class="team_score tbs" id="teamB">     </div>
+                <div class="team_ticket tat" id="team_b_ticket"> </div>
+                <div class="team_score tbs" id="teamB"> </div>
             </div>
         </div>
     </section>
     <footer>
-        <p id="footer"> © 2025 Srikanth. All rights reserved.</p>
-        
-
+        <p id="footer"> © 2025 Srikanth. All rights reserved.</p> <br>
+        <a href="https://my-portfolio-v0ez.onrender.com/" id="portfolio">Explore more...</a>
     </footer>
-    
 </body>
-    <script>
-        let ticket_A = [];
-        let ticket_B = [];
-        let sheet_number = [];
-        let empty = []
-        let picked_elements = []
-        let picked_A = []
-        let picked_B = []
-        let prize_money;
 
-        P_A_name=prompt("enter the player A name:")
-        P_B_name=prompt("enter teh palyer B name:")
-        // P_A_name="sriknath"
-        // P_B_name="sai kiran"
+<script>
+    let ticket_A = [];
+    let ticket_B = [];
+    let sheet_number = [];
+    let empty = []
+    let picked_elements = []
+    let picked_A = []
+    let picked_B = []
+    let prize_money;
 
-        let players = [
-            {
-                name:P_A_name,
-                Amount:500,
-                rating:"*****"
-            },
-            {
-                name:P_B_name,
-                Amount:500,
-                rating:"*****"
-            },
-        ]
-        // console.log(players)
+    P_A_name = prompt("enter the player A name:")
+    P_B_name = prompt("enter teh palyer B name:")
 
-        let team_a_details = `<p class="player_name pan" id="pan">Name: ${players[0].name}</p>
+
+    let players = [
+        {
+            name: P_A_name,
+            Amount: 500,
+            rating: "*****"
+        },
+        {
+            name: P_B_name,
+            Amount: 500,
+            rating: "*****"
+        },
+    ]
+
+
+    let team_a_details = `<p class="player_name pan" id="pan">Name: ${players[0].name}</p>
                     <p class="player_amount paa" id="paa">Amount : ${players[0].Amount}</p>
-                    <p class="player_star pas" id="pas">Rank: ${players[0].rating}</p> ` 
-        document.getElementById('teamA').insertAdjacentHTML("beforeend",team_a_details)
-        
-        let team_b_details = `<p class="player_name pbn" id="pbn">Name: ${players[1].name}</p>
+                    <p class="player_star pas" id="pas">Rank: ${players[0].rating}</p> `
+    document.getElementById('teamA').insertAdjacentHTML("beforeend", team_a_details)
+
+    let team_b_details = `<p class="player_name pbn" id="pbn">Name: ${players[1].name}</p>
                     <p class="player_amount pba" id="pba">Amount : ${players[1].Amount}</p>
-                    <p class="player_star pbs" id="pbs">Rank: ${players[1].rating}</p> ` 
-        document.getElementById('teamB').insertAdjacentHTML("beforeend",team_b_details)
-        
-        let game_sheet = document.getElementById("game_sheet")
-        let ticket_A_sheet = document.getElementById("team_a_ticket")
-        let ticket_B_sheet = document.getElementById("team_b_ticket")
-        let tic = document.getElementById("tic")
+                    <p class="player_star pbs" id="pbs">Rank: ${players[1].rating}</p> `
+    document.getElementById('teamB').insertAdjacentHTML("beforeend", team_b_details)
 
-        // to load the array
-        for (let i=1;i<=90;i++){
+    let game_sheet = document.getElementById("game_sheet")
+    let ticket_A_sheet = document.getElementById("team_a_ticket")
+    let ticket_B_sheet = document.getElementById("team_b_ticket")
+    let tic = document.getElementById("tic")
+
+    // to load the array
+    for (let i = 1; i <= 90; i++) {
+        sheet_number.push(i)
+    }
+
+
+    // load tickets A
+    while (ticket_A.length < 15) {
+        a = Math.ceil(Math.random() * 90)
+        if (!ticket_A.includes(a)) {
+            ticket_A.push(a)
+        }
+    }
+
+    // load ticket B
+    while (ticket_B.length < 15) {
+        a = Math.ceil(Math.random() * 90)
+        if (!ticket_B.includes(a)) {
+            ticket_B.push(a)
+        }
+    }
+    for (let i = 0; i <= 15; i++) {
+        empty.push("")
+    }
+
+    // sort the values
+    ticket_A.sort((a, b) => a - b)
+    ticket_B.sort((a, b) => a - b)
+
+    // to print the sheet
+    sheet_number.forEach((v, i) => {
+        const coin_box = `<div class="sheet_coin" id="sheet_coin_${v}">${v}</div>`;
+        game_sheet.insertAdjacentHTML("beforeend", coin_box)
+    })
+
+    // empty boxes in ticket
+    const Tempty = `<div class="T_sheet_coin" id="T_A_sheet_coin"></div>`
+
+    // to print the ticket A
+    ticket_A.forEach((v, i) => {
+        const TABox = `<div class="T_sheet_coin" id="T_A_sheet_coin_${i}">${v}</div>`;
+        ticket_A_sheet.insertAdjacentHTML("beforeend", TABox)
+        ticket_A_sheet.insertAdjacentHTML("beforeend", Tempty)
+    })
+
+    // to print the ticket B
+    ticket_B.forEach((v, i) => {
+        const TBBox = `<div class="T_sheet_coin" id="T_B_sheet_coin_${i}">${v}</div>`
+        ticket_B_sheet.insertAdjacentHTML("beforeend", TBBox)
+        ticket_B_sheet.insertAdjacentHTML("beforeend", Tempty)
+    })
+
+    // blink red and green colors
+    let s
+    let blink = function () {
+        let i = 0;
+        s = setInterval(() => {
+            if (i == 0) {
+                document.getElementById("footer").style.color = "red"
+                document.getElementById("heading").style.color = "red"
+                document.getElementById("portfolio").style.color = "blue"
+                console.log("E")
+                i = 1
+            }
+            else {
+                document.getElementById("footer").style.color = "green"
+                document.getElementById("heading").style.color = "green"
+                document.getElementById("portfolio").style.color = "orange"
+                i = 0
+            }
+        }, 100)
+    }
+
+    //refresh button
+    let refresh = function () {
+        document.getElementById("five").style.display = "flex"
+        document.getElementById("ten").style.display = "flex"
+        document.getElementById("fifty").style.display = "flex"
+        document.getElementById("hundred").style.display = "flex"
+        document.getElementById("autobtn").style.display = "none";
+        document.getElementById("pac").style.display = "none"
+        document.getElementById("refresh").style.display = "none"
+        document.getElementById("bet_amount").style.display = "none"
+        document.getElementById("footer").textContent = " © 2025 Srikanth. All rights reserved.";
+        document.getElementById("footer").style.color = "black"
+        document.getElementById("footer").style.fontSize = "1rem"
+        document.getElementById("left_div").style.backgroundColor = "gray"
+        document.getElementById("right_div").style.backgroundColor = "gray"
+        ticket_A_sheet.style.backgroundColor = "rgb(198, 191, 191)"
+        ticket_B_sheet.style.backgroundColor = "rgb(198, 191, 191)"
+        picked_elements = []
+        sheet_number = []
+        for (let i = 1; i <= 90; i++) {
             sheet_number.push(i)
-        } 
-
-        
-        // load tickets A
-        while(ticket_A.length<15) {
-            a = Math.ceil(Math.random()*90)
-            if (!ticket_A.includes(a)) {
-                ticket_A.push(a)
-                // console.log(`${a} is printed on ticket A`)
-            } 
+            let m_c = document.getElementById(`sheet_coin_${i}`)
+            m_c.style.backgroundColor = "gray";
+            m_c.style.color = "gray";
         }
-
-        // load ticket B
-        while(ticket_B.length<15) {
-            a = Math.ceil(Math.random()*90)
-            if (!ticket_B.includes(a)) {
-                ticket_B.push(a)
-                // console.log(`${a} is printed on ticket B`)
-            }  
-        }
-        for(let i=0; i<=15; i++){
-            empty.push("")
-        }
-
-        // sort the values
-        ticket_A.sort((a,b)=>a-b)
-        ticket_B.sort((a,b)=> a-b)
-        
-        // to print the sheet
-        sheet_number.forEach((v,i)=>{
-            const coin_box = `<div class="sheet_coin" id="sheet_coin_${v}">${v}</div>`;
-            game_sheet.insertAdjacentHTML("beforeend",coin_box)
+        ticket_A.forEach((v, i) => {
+            document.getElementById(`T_A_sheet_coin_${i}`).style.backgroundColor = "gray"
         })
-
-        // empty boxes in ticket
-        const Tempty =`<div class="T_sheet_coin" id="T_A_sheet_coin"></div>`
-
-        // to print the ticket A
-        ticket_A.forEach((v,i)=>{
-            const TABox = `<div class="T_sheet_coin" id="T_A_sheet_coin_${i}">${v}</div>`;
-            ticket_A_sheet.insertAdjacentHTML("beforeend",TABox)
-            ticket_A_sheet.insertAdjacentHTML("beforeend",Tempty)
+        ticket_B.forEach((v, i) => {
+            document.getElementById(`T_B_sheet_coin_${i}`).style.backgroundColor = "gray"
         })
+        picked_A = []
+        picked_B = []
+        clearInterval(intervalId);
+        clearInterval(s);
+       
+    }
 
-        // to print the ticket B
-        ticket_B.forEach((v,i)=>{
-            const TBBox = `<div class="T_sheet_coin" id="T_B_sheet_coin_${i}">${v}</div>`
-            ticket_B_sheet.insertAdjacentHTML("beforeend",TBBox)
-            ticket_B_sheet.insertAdjacentHTML("beforeend",Tempty)
-        })
 
-        //refresh button
-        let refresh = function(){
-            document.getElementById("five").style.display = "flex"
-            document.getElementById("ten").style.display = "flex"
-            document.getElementById("fifty").style.display = "flex"
-            document.getElementById("hundred").style.display = "flex"
-            document.getElementById("auto").style.display = "none"
-            document.getElementById("pac").style.display = "none"
-            document.getElementById("refresh").style.display = "none"
-            document.getElementById("bet_amount").style.display="none"
-            document.getElementById("footer").textContent=" © 2025 Srikanth. All rights reserved.";
-            document.getElementById("footer").style.color="black"
-            document.getElementById("footer").style.fontSize="1rem"
-            document.getElementById("left_div").style.backgroundColor = "gray"
-            document.getElementById("right_div").style.backgroundColor = "gray"
-            ticket_A_sheet.style.backgroundColor = "rgb(198, 191, 191)"
-            ticket_B_sheet.style.backgroundColor = "rgb(198, 191, 191)"
-            picked_elements = []
-            sheet_number=[]
-            for (let i=1;i<=90;i++){
-                sheet_number.push(i)
-                let m_c = document.getElementById(`sheet_coin_${i}`)
-                m_c.style.backgroundColor="gray";
-                m_c.style.color="gray";
-            }
-            ticket_A.forEach((v,i)=>{
-                document.getElementById(`T_A_sheet_coin_${i}`).style.backgroundColor="gray"
-               
-            })
-            ticket_B.forEach((v,i)=>{
-                document.getElementById(`T_B_sheet_coin_${i}`).style.backgroundColor ="gray"
-            })
-            picked_A = []
-            picked_B = []
+    // pick a coin button
+    let pick_a_coin = function () {
+        if (picked_A.length === 15 || picked_B.length === 15 || sheet_number.length === 0) {
+            return;
         }
-        
+        let randomIndex = Math.floor(Math.random() * sheet_number.length);
+        let rnd = sheet_number[randomIndex];
+        console.log(rnd)
 
-        // pick a coin button
-        let pick_a_coin = function(){
-            if (picked_A.length === 15 || picked_B.length === 15 || sheet_number.length === 0) {
-                return;
-            }
-            let randomIndex = Math.floor(Math.random() * sheet_number.length);
-            let rnd = sheet_number[randomIndex];
-            console.log(rnd)
+        // highlight sheet number
+        let m_c = document.getElementById(`sheet_coin_${rnd}`);
+        m_c.style.backgroundColor = "red";
+        m_c.style.color = "black";
 
-            // highlight sheet number
-            let m_c = document.getElementById(`sheet_coin_${rnd}`);
-            m_c.style.backgroundColor = "red";
-            m_c.style.color = "black";
-
-            // remove picked number
-            sheet_number.splice(randomIndex, 1);
-            tic.play();
-            ticket_A.forEach((v,i)=>{
-                if(rnd == v){
-                    document.getElementById(`T_A_sheet_coin_${i}`).style.backgroundColor="red"
-                    if(!picked_A.includes(v)){
-                        picked_A.push(v)
-                    }
+        // remove picked number
+        sheet_number.splice(randomIndex, 1);
+        tic.play();
+        ticket_A.forEach((v, i) => {
+            if (rnd == v) {
+                document.getElementById(`T_A_sheet_coin_${i}`).style.backgroundColor = "red"
+                if (!picked_A.includes(v)) {
+                    picked_A.push(v)
                 }
-            })
-            ticket_B.forEach((v,i)=>{
-                if(rnd == v){
-                    document.getElementById(`T_B_sheet_coin_${i}`).style.backgroundColor="red"
-                    if(!picked_B.includes(v)){
-                        picked_B.push(v)
-                    }
-                    
+            }
+        })
+        ticket_B.forEach((v, i) => {
+            if (rnd == v) {
+                document.getElementById(`T_B_sheet_coin_${i}`).style.backgroundColor = "red"
+                if (!picked_B.includes(v)) {
+                    picked_B.push(v)
                 }
-            })   
-
-
-            // winner
-            if(picked_A.length == 15){
-                document.getElementById("gc").play();
-                // alert(`${players[0].name} won the match`)
-                players[0].Amount += prize_money
-                document.getElementById("paa").textContent=`Amount = ${players[0].Amount}`
-                document.getElementById("heading").textContent=`${players[0].name} won the match , win ${prize_money}`
-                document.getElementById("bet_amount").textContent = "0"
-                document.getElementById("footer").textContent="Winner Winner Chicken Dinner";
-                document.getElementById("footer").style.fontSize="2.5rem"
-                document.getElementById("footer").style.color="white"
-                document.getElementById("left_div").style.backgroundColor = "green"
-                document.getElementById('pac').style.display="none"
-                document.getElementById('auto').style.display="none"              
-                ticket_A_sheet.style.backgroundColor = "green"
 
             }
+        })
+        let player_of_the_match = function (a, prize_money) {
+            document.getElementById("pba").textContent = `Amount = ${players[a].Amount}`
+            document.getElementById("heading").textContent = `${players[a].name} won the match , win ${prize_money}`
+            document.getElementById("bet_amount").textContent = "0"
+            document.getElementById("footer").textContent = "Winner Winner Chicken Dinner";
+            document.getElementById("footer").style.fontSize = "2.5rem"
+            document.getElementById("footer").style.color = "white"
+            document.getElementById('pac').style.display = "none"
+            // document.getElementById('auto').style.display = "none"
+            blink()
 
-            if(picked_B.length == 15){
-                document.getElementById("gc").play();
-                // alert(`${players[1].name} won the match`)
-                players[1].Amount += prize_money
-                document.getElementById("pba").textContent=`Amount = ${players[1].Amount}`
-                document.getElementById("heading").textContent=`${players[1].name} won the match , win ${prize_money}`
-                document.getElementById("bet_amount").textContent="0"
-                document.getElementById("footer").textContent="Winner Winner Chicken Dinner";
-                document.getElementById("footer").style.fontSize="2.5rem"
-                document.getElementById("footer").style.color="white"
-                document.getElementById("right_div").style.backgroundColor = "green"
-                document.getElementById('pac').style.display="none"
-                document.getElementById('auto').style.display="none"
-                ticket_B_sheet.style.backgroundColor = "green"
-            }
         }
-        let intervalId;
-        let auto = function(){
-            intervalId = setInterval(()=>{ pick_a_coin()},800 )
+
+        // winner
+        if (picked_A.length == 15) {
+            document.getElementById("gc").play();
+            players[0].Amount += prize_money
+            players[1].Amount -= prize_money
+            ticket_A_sheet.style.backgroundColor = "green"
+            player_of_the_match(0, prize_money)
         }
-        let stop = function(){
+
+        if (picked_B.length == 15) {
+            document.getElementById("gc").play();
+            players[1].Amount += prize_money
+            players[0].Amount -= prize_money
+            ticket_B_sheet.style.backgroundColor = "green"
+            player_of_the_match(0, prize_money)
+        }
+    }
+    let intervalId;
+    let mode = "off";
+    let auto = function () {
+
+        if (mode == "on") {
+            intervalId = setInterval(() => { pick_a_coin() }, 600)
+            mode = "off"
+            document.getElementById("autobtn").textContent = "Auto ON"
+        }
+        else {
+            mode = "on"
+            document.getElementById("autobtn").textContent = "Auto OFF"
             clearInterval(intervalId);
         }
-        
+    }
 
-        let bet = function(val){
-            document.getElementById("five").style.display = "none"
-            document.getElementById("ten").style.display = "none"
-            document.getElementById("fifty").style.display = "none"
-            document.getElementById("hundred").style.display = "none"
-            document.getElementById("auto").style.display = "none"
-            document.getElementById("pac").style.display = "flex"
-            document.getElementById("bet_amount").style.display="flex"
-            document.getElementById("refresh").style.display = "flex"
-            document.getElementById("paa").textContent=`Amount : ${players[0].Amount-val}`
-            document.getElementById("pba").textContent=`Amount : ${players[1].Amount-val}`
-            document.getElementById("bet_amount").textContent = `${val*2}`
-            document.getElementById("heading").textContent=`welcome to sk game`
-            prize_money = val
-        }
 
-    </script>
+
+    let bet = function (val) {
+        document.getElementById("cns").play();
+        document.getElementById("five").style.display = "none"
+        document.getElementById("ten").style.display = "none"
+        document.getElementById("fifty").style.display = "none"
+        document.getElementById("hundred").style.display = "none"
+        document.getElementById("autobtn").style.display = "flex"
+        document.getElementById("pac").style.display = "flex"
+        document.getElementById("bet_amount").style.display = "flex"
+        document.getElementById("refresh").style.display = "flex"
+        document.getElementById("paa").textContent = `Amount : ${players[0].Amount - val}`
+        document.getElementById("pba").textContent = `Amount : ${players[1].Amount - val}`
+        document.getElementById("bet_amount").textContent = `${val * 2}`
+        document.getElementById("heading").textContent = `welcome to housie game`
+        prize_money = val
+        clearInterval(intervalId);
+        clearInterval(s);
+
+    }
+
+</script>
+
 </html>
